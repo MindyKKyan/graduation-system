@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+	<style type="text/css">
+		body{background: url('../static/bkg.jpg');}
+		h1{
+			color:white;
+			font-size:40px;
+			text-align: left; 
+			margin-left:5%;
+			text-shadow: 2px 2px #888888;
+		}
+
+		.box1{
+			width: 150px;
+			height: 80px;
+			margin-left: 35%;
+			margin-top: 100px;
+			text-align: center;
+			background: #FFFFFFBB;
+			padding: 20px 50px;
+			border-radius:10px;
+		}
+		.box2{
+			width: 150px;
+			height: 80px;
+			margin-left: 10px;
+			margin-top: 100px;
+			text-align: center;
+			background: #FFFFFFBB;
+			padding: 20px 50px;
+			border-radius:10px;
+		}
+
+		.box3{
+			width: 150px;
+			height: 80px;
+			margin-left: 35%;
+			margin-top: 10px;
+			text-align: center;
+			background: #FFFFFFBB;
+			padding: 20px 50px;
+			border-radius:10px;
+		}
+		.box4{
+			width: 150px;
+			height: 80px;
+			margin-left: 10px;
+			margin-top: 10px;
+			text-align: center;
+			background: #FFFFFFBB;
+			padding: 20px 50px;
+			border-radius:10px;
+		}
+
+		.box5{
+			width: 150px;
+			height: 80px;
+			margin-left: 35%;
+			margin-top: 10px;
+			text-align: center;
+			background: #FFFFFFBB;
+			padding: 20px 50px;
+			border-radius:10px;
+		}
+		.box6{
+			width: 150px;
+			height: 80px;
+			margin-left: 10px;
+			margin-top: 10px;
+			text-align: center;
+			background: #FFFFFFBB;
+			padding: 20px 50px;
+			border-radius:10px;
+		}
+        .box7{
+			width: 150px;
+			height: 80px;
+			margin-left: 35%;
+			margin-top: 10px;
+			text-align: center;
+			background: #FFFFFFBB;
+			padding: 20px 50px;
+			border-radius:10px;
+		}
+		.box8{
+			width: 150px;
+			height: 80px;
+			margin-left: 10px;
+			margin-top: 10px;
+			text-align: center;
+			background: #FFFFFFBB;
+			padding: 20px 50px;
+			border-radius:10px;
+		}
+
+        .box9{
+			width: 150px;
+			height: 80px;
+			margin-left: 35%;
+			margin-top: 10px;
+			text-align: center;
+			background: #FFFFFFBB;
+			padding: 20px 50px;
+			border-radius:10px;
+		}
+
+
+
+		.user{
+			position:absolute;
+			width: 120px;
+			height: 30px;
+			font-size: 20px;
+			font-weight: bold;
+			color: white;
+			background:#00000000;
+			border:0;
+			border-radius: 15px;
+			top:30px;
+			right: 160px;
+		}
+
+		.logoutbutton{
+			position:absolute;
+			width: 120px;
+			height: 30px;
+			font-size: 20px;
+			color: white;
+			background:gray;
+			border:0;
+			border-radius: 15px;
+			top:30px;
+			right: 30px;
+		}
+
+		.link{
+			text-decoration: none;
+			font-size:20px;
+			font-weight: bold;
+			color: #191970;
+			text-shadow: 1px 1px #888888;
+		}
+	</style>
+
+<head>
+
+	<h1 class="shadow1">GPS System</h1>
+
+	<input class="user" type=button value='{{ admname }}' onclick="window.location.href='/adminMenu'" >
+	<!--补：点击用户名跳转到哪里-->
+
+	<input class="logoutbutton" type=button value=Logout onclick="window.location.href='/'" ><br>
+</head>
+<body>
+	<div>
+		<div class="box1" style="float: left;">
+		<a href="/searchAdmReq" class="link">Search Admission Requirement</a>
+		</div>
+
+		<div class="box2" style="float: left;">
+		<a href="/viewYrlRep" class="link" style="line-height: 40px;">View Yearly Report</a>
+		</div>
+
+		<div class="box3" style="float: left;">
+		<a href="/knlgPoint" class="link">View Knowledge Point</a>
+		</div>
+
+		<div class="box4" style="float: left;">
+		<a href="/viewOffertime" class="link" style="line-height: 40px;">View Offer Time</a>
+		</div>
+
+		<div class="box5" style="float: left;">
+		<a href="/provideInfo" class="link" style=" font-size: 18px;">Provide University Offer Information</a>
+		</div>
+
+		<div class="box6" style="float: left;">
+		<a href="/changePassword" class="link" style="line-height: 40px;">Change Password</a>
+		</div>
+
+        <div class="box7" style="float: left;">
+		<a href="/shareEmpExpInfo" class="link">Share Employment Experience</a>
+		</div>
+
+        <div class="box8" style="float: left;">
+		<a href="/provideKnlgPointInfo" class="link">Provide Knowledge Point</a>
+		</div>
+
+        <div class="box9" style="float: left;">
+		<a href="/generateYreport" class="link"  style="line-height: 40px;">Generate Yearly Report</a>
+		</div>
+
+	</div>
+	
+	
+</body>
+</html>

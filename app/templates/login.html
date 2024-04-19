@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<style type="text/css">
+		body{background: url('../static/lib.jpg');}
+		#loginbox{width: 400px;height: 330px;margin: 0 auto;margin-top: 1%;text-align: center;background: #FFFFFFBB;padding: 20px 50px; border-radius:10px;}
+		h1{color:white;
+			font-size:45px;}
+		h2{color: #005ea1; font-size:35px; font-weight:bold;}
+		#button1{margin-top: 15px;width: 180px;height: 30px;font-size: 20px;color: white;background:gray;border: 0;border-radius: 15px;}
+		#button2{margin-top: 15px;width: 180px;height: 30px;font-size: 20px;color: white;background:gray;border:0;border-radius: 15px;}
+        .link{color: rgb(73, 73, 73);font-weight: normal;}
+
+		.username{margin-top: 15px;width: 280px;font-size: 18px;border:1px;border-bottom: 2px solid#fff;padding: 5px 10px;background:#ffffff00;color: #1f1f1f; text-align: center;}
+		.psw{margin-top: 15px;width: 280px;font-size: 18px;border:1px;border-bottom: 2px solid#fff;padding: 5px 10px;background:#ffffff00;color: #171717; text-align: center;}
+
+		.shadow1{
+			text-shadow: 0px 2px 6px #696969;
+		}
+
+		.identity{
+			font-size:15px;
+		}
+	</style>
+	<head>
+		<meta charset="utf-8">
+
+		<title>GPS</title>
+		<h1 class="shadow1" style="text-align:center; margin-top:10%;" >GPS System</h1>
+
+	</head>
+
+	<body>
+
+
+		<div id="loginbox">
+
+
+			<h2 class="shadow1" style="margin-top:0%;" >Login</h2>
+
+			<!--<p>Login to use GPS.</p>-->
+			<form action="" method="POST">
+				<input name="name" type="text" class="username" placeholder="Please input user name" required><br>
+				<input name="password" type="password" class="psw" placeholder="Please input your password" required><br>
+
+				<p style="font-weight: bold;">Please choose your identity:</p>
+				<p class="identity" style="text-align:center;font-weight:bold">
+						<input type=radio name="identity" value="uicer" checked>UICer
+						<input type=radio name="identity" value="alumni" required>UIC Alumni
+						<input type=radio name="identity" value="administrator" required>Administrator
+				</p>
+
+			<input id="button2" type=submit value=Login onclick=""><br><br>
+			</form>
+			
+		</div>
+	</body>
+    <script>
+
+    </script>
+
+</html>

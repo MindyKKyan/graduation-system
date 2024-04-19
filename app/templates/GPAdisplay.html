@@ -1,0 +1,93 @@
+ <!DOCTYPE html>
+<html>
+	<style type="text/css">
+		body{background: url('../static/bkg.jpg');}
+
+        table{
+            width: 800px;
+        }
+
+		h1{
+			color:white;
+			font-size:30px;
+			text-align: left; 
+			margin-left:5%;
+		}
+		
+		.box{
+            position: absolute;
+            top: 120px;
+			width: 900px;
+			max-height: 680px;
+			margin-left: 22%;
+			margin-top: 120px;
+			text-align: center;
+			background: #FFFFFFBB;
+			padding: 20px 50px; 
+			border-radius:10px;
+		}
+		
+		
+		.user{
+			position:absolute;
+			width: 120px;
+			height: 30px;
+			font-size: 20px;
+			font-weight: bold;
+			color: white;
+			background:#00000000;
+			border:0;
+			border-radius: 15px;
+			top:30px;
+			right: 160px;
+		}
+		
+		.logoutbutton{
+			position:absolute;
+			width: 100px;
+			height: 30px;
+			font-size: 20px;
+			color: white;
+			background:gray;
+			border:0;
+			border-radius: 10px;
+			top:30px;
+			right: 30px;
+		}
+		
+		.button{
+			width: 100px;
+			height: 30px;
+			font-size: 20px;
+			font-weight: bold; 
+			color: white;
+			background:gray;
+			border:0;
+			border-radius: 10px;
+		}
+
+	</style>
+	
+<head>
+
+	<input class="logoutbutton" type=button value=Logout onclick="window.location.href='/'" ><br>
+</head>
+<body>
+	<div class="box" style="float: left;">
+		<p style="font-weight: bold; font-size:20px;">GPA Range: </p>
+		<!--Glist_uni_pg: GPA range searched by university or program-->
+		<textarea id="Glist_uni_pg" name="Glist_uni_pg" rows="30" cols="120">
+		</textarea>
+		<!--place to input info from DB-->
+		
+		<br>
+		<br>
+		<input class="button" type=button value=Back onclick="javascript:history.back(-1);">
+	</div>
+	
+	
+</body>
+
+<script>
+</script>
+</html>

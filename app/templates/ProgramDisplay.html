@@ -1,0 +1,173 @@
+ <!DOCTYPE html>
+<html>
+	<style type="text/css">
+		body{background: url('../static/bkg.jpg');}
+
+        table{
+            width: 800px;
+        }
+		h1{
+			color:white;
+			font-size:30px;
+			text-align: left; 
+			margin-left:5%;
+		}
+		
+		.box{
+			width: 900px;
+			max-height: 680px;
+			margin-left: 22%;
+			margin-top: 120px;
+			text-align: center;
+			background: #FFFFFFBB;
+			padding: 20px 50px; 
+			border-radius:10px;
+		}
+		
+		
+		.user{
+			position:absolute;
+			width: 120px;
+			height: 30px;
+			font-size: 20px;
+			font-weight: bold;
+			color: white;
+			background:#00000000;
+			border:0;
+			border-radius: 15px;
+			top:30px;
+			right: 160px;
+		}
+		
+		.logoutbutton{
+			position:absolute;
+			width: 100px;
+			height: 30px;
+			font-size: 20px;
+			color: white;
+			background:gray;
+			border:0;
+			border-radius: 10px;
+			top:30px;
+			right: 30px;
+		}
+		
+		.button{
+			width: 100px;
+			height: 30px;
+			font-size: 20px;
+			font-weight: bold; 
+			color: white;
+			background:gray;
+			border:0;
+			border-radius: 10px;
+		}
+
+	</style>
+	
+<head>
+
+	
+
+	
+	<input class="logoutbutton" type=button value=Logout onclick="window.location.href='/'" ><br>
+</head>
+<body>
+	<div class="box" style="float: left;">
+		{% if results %}
+            <p style="font-weight: bold; font-size:20px;">List of Programs searched by GPA range: </p>
+      <table >
+        <thead>
+          <tr>
+            <th>Program Name</th>
+            <th>University Name</th>
+              <th>GPA Range</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for program in results %}
+            <tr>
+              <td>{{ program[0] }}</td>
+              <td>{{ program[1] }}</td>
+            <td>{{ program[2] }} - {{ program[3] }}</td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    {% elif program_info %}
+            <p style="font-weight: bold; font-size:20px;">List of Programs searched by Program Name: </p>
+        <table>
+          <thead>
+            <tr>
+              <th>University Name</th>
+                <th>Program Name</th>
+                <th>GPA Range</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for program in program_info %}
+              <tr>
+                <td>{{ program[0] }}</td>
+                <td>{{ program[1] }}</td>
+                <td>{{ program[2] }} - {{ program[3] }}</td>
+              </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+    {% elif knlgPs %}
+            <p style="font-weight: bold; font-size:20px;">Knowledge Point displays: </p>
+    <table>
+      <thead>
+        <tr>
+            <th>University Name</th>
+          <th>Program Name</th>
+          <th>Courses Required</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for result in knlgPs %}
+          <tr>
+              <td>{{ result[0] }}</td>
+            <td>{{ result[1] }}</td>
+              <td>{{ result[2] }}</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+        {% elif yearlRs %}
+            <h2>Download Chart Image</h2>
+            <p>Click the link below to download the chart image:</p>
+            <a href="/download_chart/{{ image_name }}" download>Download Chart</a>
+{#    {% elif yearlRs %}#}
+{#    <table>#}
+{#      <thead>#}
+{#        <tr>#}
+{#          <th>University</th>#}
+{#          <th>Program</th>#}
+{#          <th>GPA</th>#}
+{#          <th>Year</th>#}
+{#        </tr>#}
+{#      </thead>#}
+{#      <tbody>#}
+{#        {% for result in yearlRs %}#}
+{#          <tr>#}
+{#            <td>{{ result.university }}</td>#}
+{#            <td>{{ result.program }}</td>#}
+{#            <td>{{ result.gpa }}</td>#}
+{#            <td>{{ result.year }}</td>#}
+{#          </tr>#}
+{#        {% endfor %}#}
+{#      </tbody>#}
+{#    </table>#}
+    {% endif %}
+		<br>
+		<br>
+		<input class="button" type=button value=Back onclick="javascript:history.back(-1);">
+	</div>
+	
+	
+</body>
+
+<script>
+</script>
+</html>

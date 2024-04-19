@@ -1,0 +1,218 @@
+ <!DOCTYPE html>
+<html>
+	<style type="text/css">
+		body{background: url('../static/bkg.jpg');}
+		h1{
+			color:white;
+			font-size:40px;
+			text-align: left;
+			margin-left:5%;
+			text-shadow: 2px 2px #888888;
+		}
+
+		.box{
+            position: absolute;
+            top: 120px;
+			width: 350px;
+			max-height: 380px;
+			margin-left: 38%;
+			margin-top: 120px;
+			text-align: center;
+			background: #FFFFFFBB;
+			padding: 20px 50px;
+			border-radius:10px;
+		}
+
+
+		.user{
+			position:absolute;
+			width: 120px;
+			height: 30px;
+			font-size: 20px;
+			font-weight: bold;
+			color: white;
+			background:#00000000;
+			border:0;
+			border-radius: 15px;
+			top:30px;
+			right: 160px;
+		}
+
+		.logoutbutton{
+			position:absolute;
+			width: 120px;
+			height: 30px;
+			font-size: 20px;
+			color: white;
+			background:gray;
+			border:0;
+			border-radius: 15px;
+			top:30px;
+			right: 30px;
+		}
+
+		.button{
+			width: 100px;
+			height: 30px;
+			font-size: 20px;
+			font-weight: bold;
+			color: white;
+			background:gray;
+			border:0;
+			border-radius: 15px;
+		}
+
+		.info{
+			margin-top: 10px;
+			width: 130px;
+			height: 18px;
+			font-size: 14px;
+			font-weight: bold;
+			text-align: center;
+			border:1px;
+			border-bottom: 2px solid#fff;
+			padding: 5px 10px;
+			background:#ffffff00;
+			color: #262626;
+		}
+
+		.Rtype{
+			margin-top: 10px;
+			width: 200px;
+			height: 30px;
+			font-size: 16px;
+			font-weight: bold;
+			text-align: center;
+			border:1px;
+			border-bottom: 2px solid#fff;
+			padding: 5px 10px;
+			background:#ffffff00;
+			color: #262626;
+		}
+		
+		#nav{
+			position: absolute;
+			width: 260px;
+			max-heightheight: 600px;
+			background-color: #aaaaaaaa;
+			top: 220px;
+			left: 40px;
+			border-radius: 15px;
+		}
+		
+		.navHead{
+			font-size: 20px;
+			color: white;
+			background: gray;
+			font-weight: bold;
+			border-radius: 15px;
+		}
+		
+		.navItem{
+			text-decoration: none;
+			font-size: 18px;
+			shadow: 2px 2px gray;
+			color: white;
+			font-weight: bold;
+		}
+
+	</style>
+
+<head>
+
+    <h1 class="shadow1">GPS System</h1>
+	<input class="user" type=button value='{{ name }}' onclick="" >
+
+	<input class="logoutbutton" type=button value=Logout onclick="window.location.href='/'" ><br>
+</head>
+<body>
+
+	<div id="nav" >
+		<table style="text-align: left; margin-left: 5px;" cellpadding=10px>
+			<tr>
+				<th class="navHead" > NAVIGATOR </th>
+			</tr>
+            {% if session.get('role') == 1 %}
+
+			<tr><td><a href="/searchAdmReq" class="navItem">Search Admission Requirement</a></td></tr>
+			<tr><td><a href="/knlgPoint" class="navItem">View Knowledge Point</a></td></tr>
+			<tr><td><a href="/viewOffertime" class="navItem">View Offer Time</a></td></tr>
+			<tr><td><a href="/viewYrlRep" class="navItem">View Yearly Report</a></td></tr>
+			<tr><td><a href="/provideInfo" class="navItem" style="color: #ffcc00">Provide University Offer Information</a></td></tr>
+			<tr><td><a href="/changePassword" class="navItem">Change Password</a></td></tr>
+
+
+            {% elif session.get('role') == 2 %}
+			<tr><td><a href="/searchAdmReq" class="navItem">Search Admission Requirement</a></td></tr>
+			<tr><td><a href="/knlgPoint" class="navItem">View Knowledge Point</a></td></tr>
+			<tr><td><a href="/viewOffertime" class="navItem">View Offer Time</a></td></tr>
+			<tr><td><a href="/viewYrlRep" class="navItem">View Yearly Report</a></td></tr>
+			<tr><td><a href="/provideInfo" class="navItem" style="color: #ffcc00">Provide University Offer Information</a></td></tr>
+			<tr><td><a href="/changePassword" class="navItem">Change Password</a></td></tr>
+			<tr><td><a href="/shareEmpExpInfo" class="navItem">Share Employment Experience</a></td></tr>
+			<tr><td><a href="/provideKnlgPointInfo" class="navItem">Provide Knowledge Point</a></td></tr>
+
+
+            {% elif session.get('role') == 3 %}
+
+			<tr><td><a href="/searchAdmReq" class="navItem">Search Admission Requirement</a></td></tr>
+			<tr><td><a href="/knlgPoint" class="navItem">View Knowledge Point</a></td></tr>
+			<tr><td><a href="/viewOffertime" class="navItem">View Offer Time</a></td></tr>
+			<tr><td><a href="/viewYrlRep" class="navItem">View Yearly Report</a></td></tr>
+			<tr><td><a href="/provideInfo" class="navItem" style="color: #ffcc00">Provide University Offer Information</a></td></tr>
+			<tr><td><a href="/changePassword" class="navItem">Change Password</a></td></tr>
+			<tr><td><a href="/shareEmpExpInfo" class="navItem">Share Employment Experience</a></td></tr>
+			<tr><td><a href="/provideKnlgPointInfo" class="navItem">Provide Knowledge Point</a></td></tr>
+			<tr><td><a href="/generateYreport" class="navItem">Generate Yearly Report</a></td></tr>
+
+        {% endif %}
+		</table>
+	</div>
+
+	<div class="box" style="float: left;">
+
+		<form name="msgForm", method = "post">
+			<p style="font-weight: bold; font-size:20px; color: darkblue;">
+				Offer Type:
+				<select name="Rtype" id="Rtype" class="Rtype" onfocusin="focusRtype()" onfocusout="leaveRtype()" OnChange="msgReveal()">
+					<option disabled selected style="display:none;"></option>
+					<option value=0 style="text-align: center;">Taught course offer</option>
+					<option value=1 style="text-align: center;">Research offer</option>
+				</select>
+			</p>
+
+			<p id="msgField"></p>
+
+
+
+		<input class="button" type="submit" value=Upload onclick="">
+{#		<input class="button" type=button value=Back onclick="javascript:history.back(-1);" style="margin-left:20px;">#}
+		<br>
+		<br>
+        </form>
+	</div>
+
+
+</body>
+
+<script type="text/javascript">
+
+	function focusRtype() {
+		Rtype.style.borderColor= "#80e5ff";
+	}
+	function leaveRtype(){
+		Rtype.style.borderColor= "black";
+	}
+
+	var msg = new Array(3);
+		msg[1] = "<form method='post'><input type='date' name='tdate' class='info' value='YYYY-MM-DD' required><input type='file' multiple='multiple' class='info' style='margin-left:10px;' placeholder='Photocopy' required><input name='tgpa' type='text' class='info' placeholder='GPA' required><input name='tuniversityName' type='text' class='info' placeholder='University Name' style='margin-left:10px;' required><input type='text' name='tprogramName' class='info' placeholder='Program Name' required></form><br>";
+		msg[2] = "<form method='post'><input type='date' name='rdate' class='info' value='YYYY-op-DD' required><input type='file' multiple='multiple' class='info' style='margin-left:10px;' placeholder='Photocopy' required><input name='rgpa' type='text' class='info' placeholder='GPA' required><input name='runiversityName' type='text' class='info' placeholder='University Name' style='margin-left:10px;' required><input type='text' name='rprogramName' class='info' placeholder='Program Name' required><input type='text' name='supervisor' class='info' placeholder='Supervisor' style='margin-left:10px;' required><input type='text' name='researchTopic' class='info' placeholder='Research Topic' style='margin-left:10px;' required><input type='text' name='noPapers' class='info' placeholder='Number of Papers' required><input type='text' name='noResearch' class='info' placeholder='Number of Researches' style='font-size: 12px; margin-left:10px;' required></form><br>";
+    
+	function msgReveal(){
+		var msgIndex = document.msgForm.Rtype.selectedIndex;
+		document.getElementById("msgField").innerHTML = msg[msgIndex];
+	}
+
+
+</script>
+</html>
