@@ -1,0 +1,36 @@
+from flask import Flask
+from app.config import dbInstance
+from app.controller import login, searchAdmReq, provideOffer, shareEmpExp, menu, changePassword, viewOffertime, \
+    generateYreport, viewYearlyRep, viewKnlgPoint, provideKnlgPoint
+
+
+
+def register_blueprints(app):
+    app.register_blueprint(login.loginBP)
+    app.register_blueprint(menu.menuBP)
+    app.register_blueprint(searchAdmReq.searchAdmReqBP)
+    app.register_blueprint(shareEmpExp.shareEmpExpBP)
+    app.register_blueprint(provideOffer.provideOfferBP)
+    app.register_blueprint(provideKnlgPoint.provideKnlgPointBP)
+    app.register_blueprint(changePassword.changePasswordBP)
+    app.register_blueprint(viewOffertime.viewOffertimeBP)
+    app.register_blueprint(generateYreport.generateYreportBP)
+    app.register_blueprint(viewYearlyRep.viewYearlyRepBP)
+    app.register_blueprint(viewKnlgPoint.viewKnlgPointBP)
+
+def register_plugin(app):
+    from app.models.base import db
+    db.init_app(app)
+    # with app.app_context():
+    #     db.create_all()
+    #     dbInstance.add_instance()
+
+
+def create_app():
+    app = Flask(__name__)
+    app.config.from_object('app.config.secure')
+    app.config['SECRET_KEY'] = '7c0b2b1d04b8dd90b621b51ff6d5f153'  # Secret_key for sessions
+    register_blueprints(app)
+    register_plugin(app)
+
+    return app
